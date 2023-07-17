@@ -31,7 +31,8 @@ const Info = ({ data }: Props) => {
           />
         </div>
       </div>
-      <div className="mt-10 flex items-center gap-x-3">
+      <div className="py-4 font-light leading-relaxed">{data.description}</div>
+      <div className="mt-4 flex items-center gap-x-3">
         <Button className="flex items-center gap-x-4">
           ADD TO CART
           <ShoppingCart />
