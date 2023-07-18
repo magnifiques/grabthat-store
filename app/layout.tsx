@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
+import ModalProvider from "@/providers/ModalProvider";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className}>
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />
