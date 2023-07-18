@@ -7,6 +7,7 @@ import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "./Currency";
 import { useRouter } from "next/navigation";
 import usePreviewModal from "@/hooks/usePreviewModal";
+import useCart from "@/hooks/useCart";
 
 type Props = {
   data: Product;
@@ -16,7 +17,7 @@ const Card = ({ data }: Props) => {
   const router = useRouter();
 
   const previewModal = usePreviewModal();
-
+  const cart = useCart();
   const handleClick = useCallback(
     () => router.push(`/product/${data.id}`),
     [data.id, router]
@@ -25,6 +26,11 @@ const Card = ({ data }: Props) => {
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
     previewModal.onOpen(data);
+  };
+
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+    cart.addItem(data);
   };
   return (
     <div
@@ -46,7 +52,7 @@ const Card = ({ data }: Props) => {
               icon={<Expand size={20} className="text-gray-600" />}
             />
             <IconButton
-              onClick={() => {}}
+              onClick={onAddToCart}
               icon={<ShoppingCart size={20} className="text-gray-600" />}
             />
           </div>
