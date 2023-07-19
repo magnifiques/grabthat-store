@@ -8,7 +8,14 @@ import React, { useEffect, useState } from "react";
 type Props = {};
 
 const CartPage = (props: Props) => {
+  const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
   return (
     <div className="bg-white">
       <Container>
