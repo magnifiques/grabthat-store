@@ -4,7 +4,7 @@ import React, { useCallback, useEffect } from "react";
 import Currency from "./ui/Currency";
 import Button from "./ui/Button";
 import useCart from "@/hooks/useCart";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -13,6 +13,7 @@ type Props = {};
 const Summary = (props: Props) => {
   const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
+  const router = useRouter();
 
   const removeAll = useCart((state) => state.removeAll);
 
@@ -35,11 +36,12 @@ const Summary = (props: Props) => {
     if (searchParams.get("Success")) {
       toast.success("Payment has been successfully completed");
       removeAll();
+      router.refresh();
     }
     if (searchParams.get("canceled")) {
       toast.error("Something went wrong!");
     }
-  }, [searchParams, removeAll]);
+  }, [searchParams, removeAll, router]);
 
   return (
     <div className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">

@@ -1,14 +1,34 @@
+"use client";
 import { Product } from "@/types";
-import React from "react";
+import React, {
+  MouseEventHandler,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import Currency from "./ui/Currency";
 import Button from "./ui/Button";
 import { ShoppingCart } from "lucide-react";
+import useCart from "@/hooks/useCart";
 
 type Props = {
   data: Product;
 };
 
 const Info = ({ data }: Props) => {
+  const cart = useCart();
+
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
+
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (event) => {
+      event.stopPropagation();
+      cart.addItem(data);
+      setIsAddedToCart(true);
+    },
+    [cart, data]
+  );
+
   return (
     <div>
       <h1 className="text-3xl font-bold text-gray-800">{data.name}</h1>
@@ -33,7 +53,11 @@ const Info = ({ data }: Props) => {
       </div>
       <div className="py-4 font-light leading-relaxed">{data.description}</div>
       <div className="mt-4 flex items-center gap-x-3">
-        <Button className="flex items-center gap-x-4">
+        <Button
+          className="flex items-center gap-x-4"
+          disabled={isAddedToCart}
+          onClick={onAddToCart}
+        >
           ADD TO CART
           <ShoppingCart />
         </Button>
