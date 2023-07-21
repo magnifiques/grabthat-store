@@ -16,15 +16,16 @@ const HomePage = async (props: Props) => {
 
   const products = await getProducts({ isFeatured: true });
   return (
-    <Container>
-      <div className="space-y-10 pb-10">
-        <Billboard data={billboards} />
-
-        <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-          <ProductsList title="Featured Items" items={products} />
+    <div>
+      <Billboard data={billboards} />
+      <Container>
+        <div className="space-y-10 pb-10 mt-8">
+          <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+            <ProductsList title="Featured Items" items={products} />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

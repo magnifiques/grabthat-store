@@ -6,7 +6,7 @@ type Props = {};
 const Footer = (props: Props) => {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-white border-t py-4">
+    <footer className="bg-pink-100 border-t py-4">
       <div className="mx-auto gap-y-4 flex flex-col items-center justify-center">
         <p className="text-base text-black">
           &copy; {year} Grab That Inc. All Rights Reserved.
