@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,5 +8,7 @@
 html,
 body,
 :root {
+  margin: 0;
   height: 100%;
+  box-sizing: border-box;
 }

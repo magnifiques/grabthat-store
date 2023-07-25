@@ -1,4 +1,5 @@
 import { Billboard as BillboardType } from "@/types";
+import Image from "next/image";
 import React from "react";
 
 type Props = {
@@ -8,19 +9,23 @@ type Props = {
 const Billboard = ({ data }: Props) => {
   return (
     <div className="">
-      <div
-        className="relative aspect-square lg:h-[95vh] lg:w-full "
+      <img
+        src={data.imageUrl}
+        alt="billboard"
+        className="object-cover w-full h-full object-center select-none"
+      />
+      {/* <div
+        className=" object-center object-cover"
         style={{
           backgroundImage: `url(${data?.imageUrl})`,
-          backgroundSize: "cover",
         }}
-      >
-        {/* <div className="h-full w-full flex flex-col justify-center items-center text-center gap-y-8">
+      > */}
+      {/* <div className="h-full w-full flex flex-col justify-center items-center text-center gap-y-8">
           <div className="font-bold text-3xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xs">
             {data?.label}
           </div>
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

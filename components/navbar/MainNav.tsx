@@ -18,14 +18,14 @@ const MainNav = ({ data }: Props) => {
   }));
   return (
     <div>
-      <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
+      <nav className="mx-6 flex justify-center items-center space-x-4 lg:space-x-6">
         {routes.map((route) => (
           <Link
             key={route.href}
             href={route.href}
             className={cn(
-              "text-sm font-medium transition-colors hover:text-black",
-              route.active ? "text-black" : "text-neutral-500"
+              "text-sm lg:text-xl font-medium font-domine transition-colors hover:text-white",
+              route.active ? "text-white" : "text-gray-400"
             )}
           >
             {route.label}

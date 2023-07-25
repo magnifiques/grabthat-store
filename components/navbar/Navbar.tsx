@@ -13,12 +13,19 @@ const Navbar = async (props: Props) => {
   const categories = await getCategories();
 
   return (
-    <div className="border-b bg-pink-100">
+    <div className="border-b bg-black">
       <Container>
-        <div className="relative px-4 sm:px-6 lg:px-8 h-16 flex items-center">
-          <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
-            <p className="font-bold text-xl">GRAB THAT</p>
+        <div className="flex item-center justify-center">
+          <Link href="/" className="">
+            <p className="font-gloock py-4 text-5xl text-white">Vampfire</p>
           </Link>
+        </div>
+        <div className="flex justify-center items-center">
+          <p className="text-white mt-2 font-tinos text-2xl">
+            All Dreams Real.
+          </p>
+        </div>
+        <div className="relative px-4 sm:px-6 lg:px-8 h-16 flex items-center">
           <MainNav data={categories} />
           <NavbarActions />
         </div>

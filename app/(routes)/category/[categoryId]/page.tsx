@@ -35,11 +35,11 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
   const category = await getCategory(params.categoryId);
 
   return (
-    <div className="bg-white py-6">
+    <div className="">
+      <Billboard data={category.billboard} />
       <Container>
-        <Billboard data={category.billboard} />
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-4">
             {/* Mobile Filters */}
             <MobileFilter sizes={sizes} colors={colors} />
             <div className="hidden lg:block">
