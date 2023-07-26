@@ -9,7 +9,7 @@ import ToastProvider from "@/providers/ToastProvider";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Grab That | See it, like it, Grab it",
+  title: "Vampfire | See it, like it, Grab it",
   description: "See it, like it, Grab it",
 };
 
