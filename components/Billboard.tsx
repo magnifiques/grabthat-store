@@ -13,6 +13,10 @@ const Billboard = ({ data }: Props) => {
         src={data.imageUrl}
         alt="billboard"
         className="object-cover w-full h-full object-center select-none"
+        // width={100}
+        // height={100}
+        // fill
+        // style={{ objectFit: "cover" }}
       />
       {/* <div
         className=" object-center object-cover"
