@@ -8,11 +8,11 @@ const Footer = (props: Props) => {
   return (
     <footer className="bg-black border-t py-4 mt-auto sticky top-[100vh]">
       <div className="mx-auto gap-y-4 flex flex-col items-center justify-center font-domine select-none">
-        <p className="text-sm lg:text-base text-white">
+        <p className="text-xs lg:text-base text-white">
           &copy; {year} Vampfire Inc. All Rights Reserved.
         </p>
 
-        <div className="px-4 text-sm lg:text-base text-white text-center">
+        <div className="px-4 text-xs lg:text-base text-white text-center">
           Dedicated to my favorite artists,{" "}
           <Link
             target="_blank"
@@ -39,7 +39,7 @@ const Footer = (props: Props) => {
           </Link>
           .
         </div>
-        <p className="text-white text-sm lg:text-base">
+        <p className="text-white text-xs lg:text-base pb-4">
           Made with 💚. by{" "}
           <Link target="_blank" href="https://github.com/magnifiques">
             <span className="font-semibold underline text-pink-500">
