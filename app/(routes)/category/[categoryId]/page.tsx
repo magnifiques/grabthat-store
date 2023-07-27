@@ -38,13 +38,13 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
     <div className="">
       <Billboard data={category.billboard} />
       <Container>
-        <div className="px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="mt-8 px-4 sm:px-6 lg:px-8 pb-24">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-4">
             {/* Mobile Filters */}
             <MobileFilter sizes={sizes} colors={colors} />
             <div className="hidden lg:block">
               <Filter valueKey="sizeId" data={sizes} name="Sizes" />
-              <Filter valueKey="colorId" data={colors} name="Colors" />M
+              <Filter valueKey="colorId" data={colors} name="Colors" />
             </div>
             <div className="ml-6 lg:col-span-4 lg:mt-0">
               {products.length === 0 && <NoResults />}

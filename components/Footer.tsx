@@ -6,7 +6,7 @@ type Props = {};
 const Footer = (props: Props) => {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-black border-t py-4 mt-auto sticky top-[100vh]">
+    <footer className="bg-black border-t py-8 mt-auto sticky top-[100vh]">
       <div className="mx-auto gap-y-4 flex flex-col items-center justify-center font-domine select-none">
         <p className="text-xs lg:text-base text-white">
           &copy; {year} Vampfire Inc. All Rights Reserved.
@@ -39,7 +39,7 @@ const Footer = (props: Props) => {
           </Link>
           .
         </div>
-        <p className="text-white text-xs lg:text-base pb-4">
+        <p className="text-white text-xs lg:text-base">
           Made with 💚. by{" "}
           <Link target="_blank" href="https://github.com/magnifiques">
             <span className="font-semibold underline text-pink-500">

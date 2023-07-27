@@ -9,14 +9,13 @@ type Props = {
 const Billboard = ({ data }: Props) => {
   return (
     <div className="">
-      <img
+      <Image
         src={data.imageUrl}
         alt="billboard"
-        className="object-cover w-full h-full object-center select-none"
-        // width={100}
-        // height={100}
-        // fill
-        // style={{ objectFit: "cover" }}
+        className="object-cover w-full h-full object-center "
+        width={100}
+        height={100}
+        unoptimized
       />
       {/* <div
         className=" object-center object-cover"
