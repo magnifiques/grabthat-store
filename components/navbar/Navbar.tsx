@@ -16,7 +16,7 @@ const Navbar = async (props: Props) => {
     <div className="border-b bg-black">
       <Container>
         <div className="flex item-center justify-center">
-          <Link href="/" className="">
+          <Link href="/home" className="">
             <p className="font-gloock py-4 text-5xl text-white">Vampfire</p>
           </Link>
         </div>

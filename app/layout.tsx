@@ -1,8 +1,6 @@
-import Footer from "@/components/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
-import Navbar from "@/components/navbar/Navbar";
 import ModalProvider from "@/providers/ModalProvider";
 import ToastProvider from "@/providers/ToastProvider";
 
@@ -23,9 +21,9 @@ export default function RootLayout({
       <body className={openSans.className}>
         <ModalProvider />
         <ToastProvider />
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

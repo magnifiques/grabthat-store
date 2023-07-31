@@ -17,6 +17,7 @@ module.exports = {
         gloock: ["Gloock", "serif"],
         domine: ["Domine", "serif"],
         tinos: ["Tinos", "serif"],
+        robotoSerif: ["Roboto Serif", "serif"],
       },
     },
   },
