@@ -1,15 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Category } from "@/types";
+import Image from "next/image";
+import { AlignJustify, X } from "lucide-react";
 type Props = {
   data: Category[];
 };
 
 const MainNav = ({ data }: Props) => {
   const pathName = usePathname();
+  const [navbar, setNavbar] = useState(false);
 
   const routes = data.map((route) => ({
     href: `/category/${route.id}`,
@@ -18,19 +21,45 @@ const MainNav = ({ data }: Props) => {
   }));
   return (
     <div>
-      <nav className="mx-6 flex justify-center items-center space-x-4 lg:space-x-6">
+      <nav className="mx-6  flex justify-center items-center space-x-4 lg:space-x-6 ">
         {routes.map((route) => (
           <Link
             key={route.href}
             href={route.href}
             className={cn(
-              "text-sm lg:text-xl font-medium font-domine transition-colors hover:text-white",
+              "text-sm lg:text-xl hidden md:block font-medium font-domine transition-colors hover:text-white",
               route.active ? "text-white" : "text-gray-400"
             )}
           >
             {route.label}
           </Link>
         ))}
+
+        <div className="md:hidden ">
+          <button
+            className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+            onClick={() => setNavbar(!navbar)}
+          >
+            {navbar ? (
+              <AlignJustify color="white" width={30} height={30} />
+            ) : (
+              <X width={30} height={30} color="white" />
+            )}
+          </button>
+          {!navbar && (
+            <div className="absolute top-15 text-2xl text-white bg-black flex flex-col mt-2 p-6 rounded-b-lg space-y-7">
+              {routes.map((route) => (
+                <Link
+                  key={route.href}
+                  href={route.href}
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {route.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </nav>
     </div>
   );
