@@ -12,7 +12,7 @@ type Props = {
 
 const MainNav = ({ data }: Props) => {
   const pathName = usePathname();
-  const [navbar, setNavbar] = useState(false);
+  const [toggleNavbar, setToggleNavbar] = useState(false);
 
   const routes = data.map((route) => ({
     href: `/category/${route.id}`,
@@ -36,23 +36,30 @@ const MainNav = ({ data }: Props) => {
         ))}
 
         <div className="md:hidden ">
-          <button
-            className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-            onClick={() => setNavbar(!navbar)}
-          >
-            {navbar ? (
-              <AlignJustify color="white" width={30} height={30} />
+          <button className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border">
+            {!toggleNavbar ? (
+              <AlignJustify
+                color="white"
+                width={30}
+                height={30}
+                onClick={() => setToggleNavbar(true)}
+              />
             ) : (
-              <X width={30} height={30} color="white" />
+              <X
+                width={30}
+                height={30}
+                color="white"
+                onClick={() => setToggleNavbar(false)}
+              />
             )}
           </button>
-          {!navbar && (
+          {toggleNavbar && (
             <div className="absolute top-15 text-2xl text-white bg-black flex flex-col mt-2 p-6 rounded-b-lg space-y-7">
               {routes.map((route) => (
                 <Link
                   key={route.href}
                   href={route.href}
-                  onClick={() => setNavbar(!navbar)}
+                  onClick={() => setToggleNavbar(false)}
                 >
                   {route.label}
                 </Link>
