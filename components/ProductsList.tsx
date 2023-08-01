@@ -10,7 +10,7 @@ type Props = {
 
 const ProductsList = ({ title, items }: Props) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 p-4">
       <h3 className="font-bold text-3xl">{title}</h3>
       {items.length === 0 && <NoResults />}
 

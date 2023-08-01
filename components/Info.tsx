@@ -52,7 +52,7 @@ const Info = ({ data }: Props) => {
         </div>
       </div>
       <div className="py-4 font-light leading-relaxed">{data.description}</div>
-      <div className="mt-4 flex items-center gap-x-3">
+      <div className="mt-4 flex items-center justify-center md:justify-start gap-x-3">
         <Button
           className="flex items-center gap-x-4"
           disabled={isAddedToCart}
