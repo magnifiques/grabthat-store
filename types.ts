@@ -17,7 +17,7 @@ export type Product = {
   price: string;
   description: string;
   isFeatured: boolean;
-  size: Size;
+  gender: Gender;
   color: Color;
   images: Image[];
 };
@@ -27,7 +27,7 @@ export type Image = {
   url: string;
 };
 
-export type Size = {
+export type Gender = {
   id: string;
   name: string;
   value: string;

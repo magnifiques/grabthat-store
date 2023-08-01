@@ -1,6 +1,6 @@
 "use client";
 
-import { Color, Size } from "@/types";
+import { Color, Gender } from "@/types";
 import React, { useCallback, useState } from "react";
 import Button from "./ui/Button";
 import { Plus, X } from "lucide-react";
@@ -9,11 +9,11 @@ import IconButton from "./ui/IconButton";
 import Filter from "./Filter";
 
 type Props = {
-  sizes: Size[];
+  gender: Gender[];
   colors: Color[];
 };
 
-const MobileFilter = ({ sizes, colors }: Props) => {
+const MobileFilter = ({ gender, colors }: Props) => {
   const [open, setOpen] = useState(false);
 
   const onOpen = useCallback(() => setOpen(true), []);
@@ -43,7 +43,7 @@ const MobileFilter = ({ sizes, colors }: Props) => {
               </div>
 
               <div className="p-4">
-                <Filter valueKey="sizeId" data={sizes} name="Sizes" />
+                <Filter valueKey="genderId" data={gender} name="Gender" />
                 <Filter valueKey="colorId" data={colors} name="Colors" />
               </div>
             </Dialog.Panel>

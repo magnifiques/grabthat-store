@@ -40,8 +40,8 @@ const Info = ({ data }: Props) => {
       <hr className="my-4" />
       <div className="flex flex-col gap-y-6">
         <div className="flex items-center gap-x-4">
-          <h3 className="font-semibold text-black">Size:</h3>
-          <span>{data.size.name}</span>
+          <h3 className="font-semibold text-black">Gender:</h3>
+          <span>{data.gender.name}</span>
         </div>
         <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">Color:</h3>

@@ -1,5 +1,5 @@
 "use client";
-import { Color, Size } from "@/types";
+import { Color, Gender } from "@/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useCallback } from "react";
 import qs from "query-string";
@@ -7,7 +7,7 @@ import Button from "./ui/Button";
 import { cn } from "@/lib/utils";
 
 type Props = {
-  data: (Size | Color)[];
+  data: (Gender | Color)[];
   name: string;
   valueKey: string;
 };
