@@ -22,11 +22,10 @@ const MobileFilter = ({ gender, colors }: Props) => {
   return (
     <>
       <Button
-        className="flex items-center mb-5 space-y-4 lg:hidden"
+        className="flex items-center mb-5 space-y-6 lg:hidden"
         onClick={() => onOpen()}
       >
         Filters
-        <Plus size={20} />
         <Dialog
           open={open}
           as="div"

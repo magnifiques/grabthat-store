@@ -16,6 +16,10 @@ const ProductPage = async ({ params }: Props) => {
     categoryId: product?.category.id,
   });
 
+  const relatedItems = suggestedProducts.filter(
+    (product) => product.id !== params.productId
+  );
+
   const reversed = product?.images?.reverse();
   return (
     <div className="bg-white py-5">
@@ -27,7 +31,7 @@ const ProductPage = async ({ params }: Props) => {
           </div>
         </div>
         <hr className="my-10" />
-        <ProductsList title="Related Items" items={suggestedProducts} />
+        <ProductsList title="Related Items" items={relatedItems} />
       </Container>
     </div>
   );
