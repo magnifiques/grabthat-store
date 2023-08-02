@@ -41,7 +41,7 @@ const Card = ({ data }: Props) => {
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
           alt="image"
-          src={data?.images?.[0].url}
+          src={data?.images?.[data.images.length - 1].url}
           fill
           className="aspect-square object-cover rounded-md"
         />
