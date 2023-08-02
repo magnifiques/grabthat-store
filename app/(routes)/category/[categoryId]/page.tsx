@@ -48,15 +48,15 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
       <Billboard data={category.billboard} />
       <Container>
         <div className="mt-8 px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-4">
-            {/* Mobile Filters */}
+          {/* Mobile Filters */}
 
-            <MobileFilter gender={gender} />
+          <MobileFilter gender={gender} />
 
-            <div className="hidden lg:block">
-              <Filter valueKey="genderId" data={gender} name="Gender" />
-            </div>
-            <div className="lg:ml-6 lg:col-span-4 lg:mt-4">
+          <div className="hidden lg:block">
+            <Filter valueKey="genderId" data={gender} name="Gender" />
+          </div>
+          <div className="lg:grid lg:grid-cols-3 lg:gap-x-8 mt-4">
+            <div className="lg:col-span-4 lg:mt-4">
               {products.length === 0 && <NoResults />}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {products.map((item) => (
