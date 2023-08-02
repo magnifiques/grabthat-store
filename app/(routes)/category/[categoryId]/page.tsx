@@ -30,7 +30,14 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
     colorId: searchParams.colorId,
   });
 
-  const isDress = products[0].category.name === "Dresses";
+  let brands: string[] = [];
+  products.forEach((product) => {
+    brands.push(product.name.trim().split("By ")[1]);
+  });
+
+  brands = brands.filter(
+    (value, index, array) => array.indexOf(value) === index
+  );
 
   const gender = await getGender();
   const colors = await getColors();
@@ -44,13 +51,10 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-4">
             {/* Mobile Filters */}
 
-            <MobileFilter gender={gender} colors={colors} isDress={isDress} />
+            <MobileFilter gender={gender} />
 
             <div className="hidden lg:block">
-              {!isDress && (
-                <Filter valueKey="genderId" data={gender} name="Gender" />
-              )}
-              <Filter valueKey="colorId" data={colors} name="Colors" />
+              <Filter valueKey="genderId" data={gender} name="Gender" />
             </div>
             <div className="lg:ml-6 lg:col-span-4 lg:mt-4">
               {products.length === 0 && <NoResults />}

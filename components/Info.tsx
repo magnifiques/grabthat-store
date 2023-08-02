@@ -10,12 +10,14 @@ import Currency from "./ui/Currency";
 import Button from "./ui/Button";
 import { ShoppingCart } from "lucide-react";
 import useCart from "@/hooks/useCart";
+import Image from "next/image";
 
 type Props = {
   data: Product;
+  brand: string;
 };
 
-const Info = ({ data }: Props) => {
+const Info = ({ data, brand }: Props) => {
   const cart = useCart();
 
   const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -52,7 +54,15 @@ const Info = ({ data }: Props) => {
         </div>
       </div>
       <div className="py-4 font-light leading-relaxed">{data.description}</div>
-      <div className="mt-4 flex items-center justify-center md:justify-start gap-x-3">
+      <div className="mt-4 mb-6">
+        <Image
+          src={`/brands/${brand}.svg`}
+          width={150}
+          height={150}
+          alt="brand"
+        />
+      </div>
+      <div className="mt-8 flex items-center justify-center md:justify-start gap-x-3">
         <Button
           className="flex items-center gap-x-4"
           disabled={isAddedToCart}

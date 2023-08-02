@@ -20,15 +20,16 @@ const ProductPage = async ({ params }: Props) => {
     (product) => product.id !== params.productId
   );
 
-  const reversed = product?.images?.reverse();
+  const brand = product.name.trim().split("By ")[1];
+
   return (
     <div className="bg-white py-5">
       <Container>
         <div className="px-4 py-10 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 gap-y-2">
-            <Gallery images={reversed} />
+            <Gallery images={product.images} />
             <div className="mt-8">
-              <Info data={product} />
+              <Info data={product} brand={brand} />
             </div>
           </div>
         </div>

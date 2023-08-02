@@ -18,28 +18,30 @@ const HomePage = async (props: Props) => {
 
           <hr className="text-white my-4" />
           <p className="lg:text-lg pt-2 pb-2 font-robotoSerif">
-            Ever since I was a kid, I was fascinated by 2 things:{" "}
+            Ever since I was a kid, I&apos;ve been absolutely obsessed with two
+            things that have shaped my identity:{" "}
             <span className="font-normal text-violet-500">Music</span> and{" "}
             <span className="font-normal text-lime-500">Fashion</span>.
           </p>
           <p className="lg:text-lg pb-3 font-robotoSerif">
             I remember watching music videos on television and getting
             fascinated by the clothes, and shoes that were worn by the artists.
-            I tried to find the same shoes in my nearby stores that those
-            artists wore in those music videos, spending tons of time
-            customizing the characters in the &quot;Customize your
-            Character&quot; menu of my favorite video games to match all of my
-            character&apos;s clothes with each other.
+            I&apos;d go on wild scavenger hunts around local stores, trying to
+            find the exact same shoes those musicians rocked in their videos.
+            Not to mention, I&apos;d spend countless hours perfecting the
+            outfits of my characters in video games, ensuring they had the
+            coolest look that matched my own style.
           </p>
 
           <p className="lg:text-lg pb-3 font-robotoSerif">
-            In this project, I have gathered all of my favorite fashion
-            collections and displayed them in their respective categories. This
-            includes every iconic shoe I know, a beautiful season collection
-            released by truly talented fashion artists, noteworthy collections
-            by streetwear brands that I think people should check out, and most
-            importantly, hip-hop fashion, which has influenced my overall
-            wardrobe and fashion choices.
+            For this project, I&apos;ve poured my heart and soul into curating
+            all my favorite fashion collections, organizing them into neat
+            categories. From iconic shoes that have left an indelible mark, to
+            breathtaking seasonal collections from talented fashion artists, and
+            even highlighting the streetwear brands that deserve recognition -
+            it&apos;s all here! But perhaps the most influential aspect is my
+            exploration of hip-hop fashion, which has had a massive impact on my
+            personal wardrobe choices.
           </p>
 
           <p className="lg:text-lg pb-3 font-robotoSerif">

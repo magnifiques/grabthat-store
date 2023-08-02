@@ -10,11 +10,10 @@ import Filter from "./Filter";
 
 type Props = {
   gender: Gender[];
-  colors: Color[];
-  isDress: boolean;
+  colors?: Color[];
 };
 
-const MobileFilter = ({ gender, colors, isDress }: Props) => {
+const MobileFilter = ({ gender, colors }: Props) => {
   const [open, setOpen] = useState(false);
 
   const onOpen = useCallback(() => setOpen(true), []);
@@ -43,10 +42,9 @@ const MobileFilter = ({ gender, colors, isDress }: Props) => {
               </div>
 
               <div className="p-4">
-                {!isDress && (
-                  <Filter valueKey="genderId" data={gender} name="Gender" />
-                )}
-                <Filter valueKey="colorId" data={colors} name="Colors" />
+                <Filter valueKey="genderId" data={gender} name="Gender" />
+
+                {/* <Filter valueKey="colorId" data={colors} name="Colors" /> */}
               </div>
             </Dialog.Panel>
           </div>
