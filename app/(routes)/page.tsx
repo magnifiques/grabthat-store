@@ -52,7 +52,9 @@ const HomePage = async (props: Props) => {
 
           <div className="mt-4 mb-4 text-center lg:text-left font-normal">
             <button className="bg-white text-2xl font-domine text-black p-4 rounded-lg hover:bg-violet-600 hover:text-white transition-all">
-              <Link href="/home">Discover Vampfire</Link>
+              <Link href="/home" scroll>
+                Discover Vampfire
+              </Link>
             </button>
           </div>
         </div>

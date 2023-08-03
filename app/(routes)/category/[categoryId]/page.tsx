@@ -52,7 +52,7 @@ const CategoryPage = async ({ params, searchParams }: Props) => {
 
           <MobileFilter gender={gender} />
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:block ">
             <Filter valueKey="genderId" data={gender} name="Gender" />
           </div>
           <div className="lg:grid lg:grid-cols-3 lg:gap-x-8 mt-4">
