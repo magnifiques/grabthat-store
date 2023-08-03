@@ -54,7 +54,7 @@ const MainNav = ({ data }: Props) => {
             )}
           </button>
           {toggleNavbar && (
-            <div className="absolute top-15 text-2xl text-white bg-black flex flex-col mt-2 p-6 rounded-b-lg space-y-7">
+            <div className="absolute z-30 top-15 text-2xl text-white bg-black flex flex-col mt-2 p-6 rounded-b-lg space-y-7">
               {routes.map((route) => (
                 <Link
                   key={route.href}

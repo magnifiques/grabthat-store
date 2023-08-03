@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import getProduct from "@/actions/getProduct";
 import getProducts from "@/actions/getProducts";
 import Gallery from "@/components/gallery/Gallery";

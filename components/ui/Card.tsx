@@ -47,13 +47,13 @@ const Card = ({ data }: Props) => {
         />
         <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
           <div className="flex gap-x-6 justify-center">
-            <IconButton
+            {/* <IconButton
               onClick={onPreview}
               icon={<Expand size={20} className="text-gray-600" />}
-            />
+            /> */}
             <IconButton
               onClick={onAddToCart}
-              icon={<ShoppingCart size={20} className="text-gray-600" />}
+              icon={<ShoppingCart size={30} className="text-gray-600" />}
             />
           </div>
         </div>

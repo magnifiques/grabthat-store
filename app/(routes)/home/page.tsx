@@ -1,11 +1,11 @@
+export const revalidate = 0;
+
 import getBillboards from "@/actions/getBillboards";
 import getProducts from "@/actions/getProducts";
 import Billboard from "@/components/Billboard";
 import ProductsList from "@/components/ProductsList";
 import Container from "@/components/ui/Container";
 import React from "react";
-
-export const revalidate = 0;
 
 const HomePage = async () => {
   const billboards = await getBillboards(
