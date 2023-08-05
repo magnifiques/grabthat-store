@@ -14,11 +14,32 @@ const MainNav = ({ data }: Props) => {
   const pathName = usePathname();
   const [toggleNavbar, setToggleNavbar] = useState(false);
 
-  const routes = data.map((route) => ({
-    href: `/category/${route.id}`,
-    label: route.name,
-    active: pathName === `/category/${route.id}`,
-  }));
+  // {
+  //   href: `/category/${route.id}`,
+  //   label: route.name,
+  //   active: pathName === `/category/${route.id}`,
+  // }
+  const routes = data.map((route) => {
+    if (route.name === "Accessories") {
+      return {
+        href: `/accessories/${route.id}`,
+        label: route.name,
+        active: pathName === `/accessories/${route.id}`,
+      };
+    } else if (route.name === "Uppers") {
+      return {
+        href: `/uppers/${route.id}`,
+        label: route.name,
+        active: pathName === `/uppers/${route.id}`,
+      };
+    } else {
+      return {
+        href: `/category/${route.id}`,
+        label: route.name,
+        active: pathName === `/category/${route.id}`,
+      };
+    }
+  });
   return (
     <div>
       <nav className="mx-6  flex justify-center items-center space-x-4 lg:space-x-6 ">
