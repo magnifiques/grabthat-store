@@ -68,32 +68,25 @@ const AccessoryPage = async ({ params, searchParams }: Props) => {
     }
   });
 
-  let scarfs: Product[] = [];
+  let jackets: Product[] = [];
 
   products.forEach((product) => {
-    if (product.name.includes("Scarf")) {
-      scarfs.push(product);
+    if (product.name.includes("Jacket")) {
+      jackets.push(product);
     }
   });
 
-  let sunglasses: Product[] = [];
+  let coats: Product[] = [];
   products.forEach((product) => {
-    if (product.name.includes("Sunglasses")) {
-      sunglasses.push(product);
+    if (product.name.includes("Coat")) {
+      coats.push(product);
     }
   });
 
-  let perfumes: Product[] = [];
+  let tees: Product[] = [];
   products.forEach((product) => {
-    if (product.name.includes("Perfume")) {
-      perfumes.push(product);
-    }
-  });
-
-  let hats: Product[] = [];
-  products.forEach((product) => {
-    if (product.name.includes("Hat")) {
-      hats.push(product);
+    if (product.name.includes("Tee")) {
+      tees.push(product);
     }
   });
 
@@ -123,7 +116,53 @@ const AccessoryPage = async ({ params, searchParams }: Props) => {
               </div>
             </div>
           )}
-          {hoodies.length === 0 && <NoResults />}
+          {jackets.length > 0 && (
+            <div className="lg:grid lg:grid-cols-3 lg:gap-x-8 mt-4">
+              <div className="lg:col-span-4 lg:mt-4">
+                <h1 className=" lg:text-2xl text-lg font-bold font-robotoSerif mb-3">
+                  Jackets:
+                </h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {jackets.map((item) => (
+                    <Card key={item.id} data={item} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+          {coats.length > 0 && (
+            <div className="lg:grid lg:grid-cols-3 lg:gap-x-8 mt-4">
+              <div className="lg:col-span-4 lg:mt-4">
+                <h1 className=" lg:text-2xl text-lg font-bold font-robotoSerif mb-3">
+                  Coats:
+                </h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {coats.map((item) => (
+                    <Card key={item.id} data={item} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+          {tees.length > 0 && (
+            <div className="lg:grid lg:grid-cols-3 lg:gap-x-8 mt-4">
+              <div className="lg:col-span-4 lg:mt-4">
+                <h1 className=" lg:text-2xl text-lg font-bold font-robotoSerif mb-3">
+                  Tees:
+                </h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {tees.map((item) => (
+                    <Card key={item.id} data={item} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {hoodies.length === 0 &&
+            jackets.length === 0 &&
+            coats.length === 0 &&
+            tees.length === 0 && <NoResults />}
         </div>
       </Container>
     </div>
