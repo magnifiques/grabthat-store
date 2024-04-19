@@ -7,10 +7,11 @@ type Props = {
 };
 
 const Billboard = ({ data }: Props) => {
+  console.log(data);
   return (
     <div className="">
       <Image
-        src={data.imageUrl}
+        src={data?.imageUrl}
         alt="billboard"
         className="object-cover w-full h-full object-center "
         width={100}

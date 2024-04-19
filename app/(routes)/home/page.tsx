@@ -9,7 +9,7 @@ import React from "react";
 
 const HomePage = async () => {
   const billboards = await getBillboards(
-    "fb256043-da6e-43bf-976f-f93d52f895a2"
+    "14ee2d34-f159-457e-bb1f-705758d64e5f"
   );
 
   const products = await getProducts({ isFeatured: true });
