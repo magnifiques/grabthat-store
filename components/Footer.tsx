@@ -32,10 +32,10 @@ const Footer = (props: Props) => {
           , and{" "}
           <Link
             target="_blank"
-            href="https://us.louisvuitton.com/eng-us/magazine/articles/pharrell-williams"
+            href="https://www.pinterest.com/fndia101/asap-rocky/"
             className="font-semibold text-yellow-500"
           >
-            Pharrell Williams
+            A$AP Rocky
           </Link>
           .
         </div>
